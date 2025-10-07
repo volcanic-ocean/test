@@ -1,23 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[2]:
 
 
 import streamlit as st
 import joblib
 import numpy as np
-import os
 
 # Load trained model
-from pathlib import Path
-import joblib
-
-# Get current working directory
-current_dir = Path.cwd()
-model_path = current_dir / "iris_model.pkl"
-model = joblib.load(model_path)
-
+model = joblib.load(r"C:\Users\vangala.ranadheer\Desktop\Ranadheer\Projects\Deployment\iris\iris_model.pkl")
 
 target_names = ['setosa', 'versicolor', 'virginica']
 
@@ -33,10 +25,4 @@ if st.button("Predict"):
     prediction = model.predict(data)[0]
     species = target_names[prediction]
     st.success(f"🌼 Predicted Species: **{species.capitalize()}**")
-
-
-# In[ ]:
-
-
-
 
